@@ -10,7 +10,8 @@ function ConvertHandler() {
   
   this.getNum = function(input) {
     let result;
-    let numberString = input.match(/^([0-9\.\/]*)([a-zA-Z]+)$/)[1]
+    let search = input.match(/^([0-9\.\/]*)([a-zA-Z]*)$/)
+    let numberString  = search ? search[1] : ""
     
     if (numberString=="") return 1;
     if (numberString.match(/\/.*\//)) return null;
